@@ -32,9 +32,7 @@ function preload(){
   restartImg = loadImage("restart.png")
   gameOverImg = loadImage("gameOver.png")
   
-  jumpSound = loadSound("jump.mp3")
-  dieSound = loadSound("die.mp3")
-  checkPointSound = loadSound("checkPoint.mp3")
+  
 }
 
 function setup() {
@@ -94,13 +92,11 @@ function draw() {
     if (ground.x < 0){
       ground.x = ground.width/2;
     }
-    if(score > 0 && score% 300 === 0){
-      checkPointSound.play();
-    }
+  
     //pular quando a tecla de espaço for pressionada
     if((touches.length > 0||keyDown("space"))&& trex.y >= height-90) {
         trex.velocityY = -12;
-        jumpSound.play();
+     
     }
     
     //adicione gravidade
